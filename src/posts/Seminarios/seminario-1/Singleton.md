@@ -23,3 +23,40 @@ author: GuiSamp, RiansFonseca
 
 <!-- @include: ../../../includes/seminario-1-RiansFonseca/README-SINGLETON.md -->
 
+## Luís Miguel
+
+`Classe Tabuleiro`
+```java
+public class Tabuleiro {
+    private static Tabuleiro instance;
+
+    private Double area;
+
+    private Tabuleiro(Double area) {
+        this.area = area;
+    }
+
+    public static Tabuleiro getInstance(Double area) {
+        if (instance == null) {
+            instance = new Tabuleiro(area);
+        }
+        return instance;
+    }
+
+    public void mostrarTabuleiro() {
+        // Lógica para o método
+    }
+}
+```
+
+`Código cliente`
+```java
+public class Main {
+    public static void main(String[] args) {
+        Tabuleiro tabuleiro1 = Tabuleiro.getInstance(100);
+        tabuleiro.mostrarTabuleiro();
+        Tabuleiro tabuleiro2 = Tabuleiro.getInstance(200);
+        System.out.println("São as mesmas instâncias? " + (tabuleiro1 == tabuleiro2));
+    }
+}
+```
